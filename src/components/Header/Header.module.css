@@ -1,0 +1,70 @@
+/* Definição do keyframe para o pulso sutil */
+@keyframes subtle-pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.10);
+        /* Levemente maior */
+        opacity: 0.95;
+        /* Levemente mais transparente */
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Estilos para o Header principal */
+.header {
+    width: 100%;
+    height: 120px;
+    /* display: flex e justify-content: flex-start vão colocar o logo à esquerda */
+    display: flex;
+    justify-content: flex-start;
+    /* Alinha o conteúdo à esquerda */
+    align-items: center;
+    /* Centraliza verticalmente o conteúdo */
+    padding: 1rem 1.5rem;
+    /* Ajuste o padding para o espaçamento interno do header */
+    background-color: black;
+    /* Exemplo de cor de fundo, ajuste conforme seu tema */
+    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    /* Sombra sutil */
+    position: sticky;
+    /* ou fixed, dependendo se você quer que ele role ou fique fixo */
+    top: 0;
+    z-index: 50;
+    /* Garante que o header fique acima de outros conteúdos */
+    border-bottom-right-radius: 15%;
+    border-bottom-left-radius: 15%;
+}
+
+/* Se você ainda precisar do spacer para algum motivo específico de layout, ajuste-o.
+   Geralmente, o padding no .header é suficiente.
+*/
+
+
+/* Container do logo dentro do header */
+.logo-container {
+    /* Aplica a animação de pulso */
+    animation: subtle-pulse 2s infinite ease-in-out;
+    /* 2s duração, infinito, suavização */
+    /* Remove margens extras se houver */
+    margin: 0;
+    padding: 0;
+    /* Ajuste o tamanho do container do logo se precisar de mais controle sobre a área de pulso */
+    /* width: 80px; */
+    /* Pode ser útil para fixar a área de pulso */
+    /* height: 80px; */
+    display: flex;
+    /* Para garantir que o Image esteja centralizado dentro do logo-container se for maior */
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: -40px;
+}

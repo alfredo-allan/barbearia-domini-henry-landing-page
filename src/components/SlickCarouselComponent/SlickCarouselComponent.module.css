@@ -1,0 +1,76 @@
+/* Esconde os ícones padrão do Slick que vêm com slick-theme.css */
+.slick-prev:before,
+.slick-next:before {
+  display: none !important;
+}
+
+/* Esconde o conteúdo padrão do dot, para que apenas o nosso button customizado apareça */
+.slick-dots li button:before {
+  display: none;
+}
+
+/* Garante que o container principal do Slider não adicione margens ou paddings indesejados */
+.slick-list {
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+/* Garante que o track seja flex e zere margens */
+.slick-track {
+  display: flex !important;
+  margin: 0 !important;
+}
+
+/* Ajustes para os slides. Importante para a altura. */
+.slick-slide {
+  padding: 0 !important;
+  box-sizing: border-box;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  /* height: auto; foi removido, a altura vem do .carousel-container */
+}
+
+/* O container principal do Slick Carousel, onde definiremos a altura */
+.carousel-container {
+  width: 100%;
+  /* Ocupa 100% da largura do pai */
+  height: 100%;
+  display: block;
+  /* Garante que seja um bloco e ocupe o espaço */
+  position: relative;
+  /* Importante para o Next/Image fill */
+  overflow: hidden;
+  /* Corta o que passar da altura/largura */
+}
+
+/* Garante que o item da lista de dots não tenha largura ou altura 0 */
+.slick-dots li {
+  width: auto !important;
+  height: auto !important;
+}
+
+/* Ajuste para o container da imagem dentro do slide */
+.image-container {
+  position: relative;
+  /* Necessário para Image fill */
+  width: 100%;
+  /* Ocupa a largura total do slide */
+  height: 100%;
+  /* Ocupa a altura total do slide */
+  overflow: hidden;
+  /* Importante para o arredondamento e corte */
+}
+
+/* Estilo para as setas (se decidir usá-las, o que não é o caso atual) */
+.slick-next,
+.slick-prev {
+  z-index: 10;
+  /* Garante que as setas estejam acima dos slides */
+}
+
+.section {
+  position: relative;
+  top: 2px;
+}

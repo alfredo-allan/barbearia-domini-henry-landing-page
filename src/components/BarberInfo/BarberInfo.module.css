@@ -1,0 +1,7 @@
+.barberInfoSection {
+    position: relative;
+    top: 10%;
+    background-color: black;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
