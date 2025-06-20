@@ -1,7 +1,71 @@
 .barberInfoSection {
     position: relative;
     top: 10%;
-    background-color: black;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    font-family: var(--font-lubrifont);
 }
+
+/* .barberInfoSection {}
+
+.textContainer {} */
+
+/* Título principal H2 */
+.title {
+    /* Suas classes Tailwind como text-4xl, sm:text-5xl, font-bold continuarão no TSX */
+    /* Removemos o text-blue-400 do TSX para este efeito */
+    position: relative;
+    /* Importante para o z-index ou posicionamento se outros elementos sobreporem */
+    z-index: 1;
+    /* Garante que o texto esteja acima de qualquer outra coisa que possa ter z-index baixo */
+}
+
+/* NOVO: Classe para o Título com Efeito Gradiente Animado */
+.gradientTitle {
+    /* Estas são as propriedades que fazem o gradiente aparecer no texto */
+    background: linear-gradient(-45deg, #4b5563, #3b82f6, #60a5fa, #3b82f6);
+    /* Cores do seu gradiente. Adaptei para tons de azul */
+    animation: gradiente 10s ease infinite;
+    /* Aplica a mesma animação 'gradiente' */
+    background-size: 500% 500%;
+    /* Mesma configuração de background-size */
+
+    /* Propriedades para recortar o background no texto */
+    -webkit-background-clip: text;
+    /* Para navegadores baseados em WebKit (Chrome, Safari, Edge) */
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* Torna a cor do texto transparente para o background aparecer */
+    color: transparent;
+    /* Fallback para navegadores que não suportam -webkit-text-fill-color */
+
+    /* Garante que o texto não tenha sombra de texto, que poderia interferir */
+    text-shadow: none;
+}
+
+
+/* Definição do keyframe 'gradiente' - COPIE ISSO DO SEU GLOBLAS.CSS (OU ONDE ESTIVER) PARA AQUI */
+/* É crucial que a animação seja definida no mesmo arquivo ou esteja globalmente disponível */
+@keyframes gradiente {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* .paragraph {
+}
+
+.expoLink {
+}
+
+.instagramButton {
+}
+
+.lottieContainer {
+} */

@@ -17,10 +17,10 @@ export default function Header() {
             {/* Adicionamos styles.logo-container para estilos específicos do logo */}
             <div className={styles['logo-container']}>
                 <Image
-                    src="/icons/splash.png"
+                    src="/icons/LogoLandingPage.png"
                     alt="Logo"
-                    width={110} // Reduzi o tamanho inicial para ser mais típico de um ícone de header
-                    height={110} // Ajuste conforme o tamanho real do seu ícone no header
+                    width={150} // Reduzi o tamanho inicial para ser mais típico de um ícone de header
+                    height={100} // Ajuste conforme o tamanho real do seu ícone no header
                     className="object-contain object-center"
                 />
             </div>

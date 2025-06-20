@@ -18,14 +18,11 @@
 /* Regras padrão para o body (modo claro) */
 body {
   /* Aplica a cor de fundo padrão para o modo claro */
-  background: var(--color-background);
+  /* background: var(--color-background); */
   color: var(--color-text-primary);
-  /* Correção: use uma variável de cor de texto válida, como --color-text-primary */
   font-family: var(--font-lubrifont), sans-serif;
   min-height: 100vh;
-  /* Garante que o body ocupe a altura total da viewport */
   margin: 0;
-  /* Remove margens padrão do navegador */
 }
 
 /* Regras para o body no modo escuro */
@@ -41,13 +38,13 @@ body {
   }
 
   :root {
-    --color-background: #0a0a0a;
+    /* --color-background: #0a0a0a; */
     /* Pode ser usado para elementos que não terão o gradiente */
     --color-text-primary: #ededed;
   }
 }
 
-/* @keyframes gradiente {
+@keyframes gradiente {
   0% {
     background-position: 0% 50%;
   }
@@ -59,4 +56,4 @@ body {
   100% {
     background-position: 0% 50%;
   }
-} */
+}
