@@ -2,8 +2,8 @@
 
 import Lottie from 'lottie-react';
 import { twMerge } from 'tailwind-merge';
-// Use '@/public' para importações de assets dentro de 'public', é mais robusto.
 import bigodeAnimationData from '../../../public/animations/bigode.json';
+import pirulitoAnimationData from '../../../public/animations/barber-pole.json';
 import Image from 'next/image';
 
 // Importa o CSS Module
@@ -54,49 +54,69 @@ export default function BarberInfo() {
                 </p>
 
                 {/* Link para o Projeto Expo */}
-                <a
-                    href="https://expo.dev/@seu-usuario/seu-projeto" // <--- SUBSTITUA PELO SEU LINK REAL DO EXPO
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={twMerge(
-                        styles.expoLink,
-                        styles.gradientTitle, // Aplicando a classe do módulo
-                        "text-blue-500 hover:text-blue-400 underline text-lg font-semibold transition-colors duration-300"
-                    )}
-                >
-                    Baixe Nosso App !
-                </a>
+
+                <div className="flex items-center gap-4"> {/* Container para o link e o Lottie */}
+                    <a
+                        // Caminho direto para o APK dentro da pasta 'public'.
+                        // O atributo 'download' força o navegador a baixar o arquivo.
+                        href="/apk/application-da93d50a-a7a8-448d-8828-b574186e4a48.apk"
+                        download // <--- ADICIONADO: Este atributo força o download!
+                        // REMOVIDO: target="_blank" e rel="noopener noreferrer" para evitar abrir nova aba
+                        className={twMerge(
+                            styles.expoLink,
+                            // Se você quer que o texto do link também tenha o gradiente:
+                            // styles.gradientTitle, 
+                            "text-blue-500 hover:text-blue-400 underline text-lg font-semibold transition-colors duration-300"
+                        )}
+                    >
+                        Baixe Nosso App !
+                    </a>
+                    <div className={styles.pirulito}>
+                        <Lottie
+                            animationData={pirulitoAnimationData} // <--- SEU ARQUIVO LOTTIE AQUI!
+                            loop={true}
+                            autoplay={true}
+                            className="w-full h-full object-contain"
+                        />
+                    </div>
+                </div>
 
                 {/* Área dos Ícones de Contato - Design Clean */}
-                <div className="flex items-center gap-4 mt-6">
-                    {/* Ícone do WhatsApp */}
-                    <Image
-                        src="/icons/whatsapp.png" // <--- CAMINHO PARA O SEU ÍCONE DO WHATSAPP (PNG ou SVG)
-                        alt="WhatsApp Icon"
-                        width={35}
-                        height={48}
-                        className="cursor-pointer hover:scale-110 transition-transform duration-200"
-                        onClick={handleContactClick}
-                    />
+                <div className="flex flex-col items-start mt-6"> {/* Use flex-col para empilhar verticalmente */}
+                    <span className={styles.contato}>Entre em Contato</span>
+                    <div className="flex items-center gap-4 mt-2"> {/* Um novo div para os ícones, com espaçamento no topo */}
+                        {/* Ícone do WhatsApp */}
+                        <Image
+                            src="/icons/whatsapp.png"
+                            alt="WhatsApp Icon"
+                            width={35}
+                            height={35}
+                            className="cursor-pointer hover:scale-110 transition-transform duration-200"
+                            onClick={handleContactClick}
+                        />
 
-                    {/* Ícone do Instagram */}
-                    <Image
-                        src="/icons/instagram.png" // <--- CAMINHO PARA O SEU ÍCONE DO INSTAGRAM
-                        alt="Instagram Icon"
-                        width={35}
-                        height={35}
-                        className="cursor-pointer hover:scale-110 transition-transform duration-200"
-                        onClick={handleInstaClick}
-                    />
+                        {/* Ícone do Instagram */}
+                        <Image
+                            src="/icons/instagram.png"
+                            alt="Instagram Icon"
+                            width={35}
+                            height={35}
+                            className="cursor-pointer hover:scale-110 transition-transform duration-200"
+                            onClick={handleInstaClick}
+                        />
+                    </div>
                 </div>
+                {/* --- FIM DA SEÇÃO DE CONTATO AJUSTADA --- */}
+
             </div>
+
 
             {/* Seção da Animação Lottie */}
             <div className={twMerge(
                 styles.lottieContainer, // Aplicando a classe do módulo
                 "w-full md:w-1/2 flex items-center justify-center"
             )}>
-                <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
+                <div className="{relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96}">
                     <Lottie
                         animationData={bigodeAnimationData}
                         loop={true}

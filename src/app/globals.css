@@ -12,36 +12,20 @@
   --color-footer-bg: #3700FF;
   --color-header-bg: #3700FF;
 
-  /* No modo claro, o body usa --color-background */
 }
 
-/* Regras padrão para o body (modo claro) */
+
 body {
-  /* Aplica a cor de fundo padrão para o modo claro */
-  /* background: var(--color-background); */
+  background: linear-gradient(-45deg, #1A1A1A, #000000, #333333, #000000);
+  animation: gradiente 10s ease infinite;
+  background-size: 500% 500%;
+  height: 100vh;
+  margin: 0;
   color: var(--color-text-primary);
   font-family: var(--font-lubrifont), sans-serif;
   min-height: 100vh;
   margin: 0;
-}
-
-/* Regras para o body no modo escuro */
-@media (prefers-color-scheme: dark) {
-  body {
-    background: linear-gradient(-45deg, #1A1A1A, #000000, #333333, #000000);
-    animation: gradiente 10s ease infinite;
-    background-size: 500% 500%;
-    height: 100vh;
-    margin: 0;
-
-    color: var(--color-text-primary);
-  }
-
-  :root {
-    /* --color-background: #0a0a0a; */
-    /* Pode ser usado para elementos que não terão o gradiente */
-    --color-text-primary: #ededed;
-  }
+  color: var(--color-text-primary);
 }
 
 @keyframes gradiente {

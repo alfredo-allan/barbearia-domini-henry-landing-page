@@ -69,3 +69,15 @@
 
 .lottieContainer {
 } */
+
+.pirulito {
+    width: 90px;
+    position: relative;
+    left: -50;
+}
+
+.contato {
+    position: relative;
+    margin: 0;
+    flex-direction: column;
+}
